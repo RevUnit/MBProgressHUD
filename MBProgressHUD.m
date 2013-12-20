@@ -41,7 +41,7 @@
 #endif
 
 
-static const CGFloat kPadding = 4.f;
+static const CGFloat kPadding = 15.f;
 static const CGFloat kLabelFontSize = 16.f;
 static const CGFloat kDetailsLabelFontSize = 12.f;
 
@@ -491,7 +491,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		// Update to indeterminate indicator
 		[indicator removeFromSuperview];
 		self.indicator = MB_AUTORELEASE([[UIActivityIndicatorView alloc]
-										 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge]);
+										 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]);
 		[(UIActivityIndicatorView *)indicator startAnimating];
 		[self addSubview:indicator];
 	}
@@ -1102,7 +1102,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
     if(self){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:self.backgroundImageView];
-        self.backgroundImageView.layer.cornerRadius = 10.0;
+        self.backgroundImageView.layer.cornerRadius = 0.0;
         self.backgroundImageView.clipsToBounds = YES;
         self.backgroundImageView.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
@@ -1190,8 +1190,8 @@ dispatch_source_t DispatchTimer(uint64_t interval, uint64_t leeway, dispatch_que
 + (MMBlurComponents *) lightEffect {
     MMBlurComponents *components = MB_AUTORELEASE([[MMBlurComponents alloc] init]);
     components.radius = 6;
-    components.tintColor = [UIColor colorWithWhite:.8f alpha:.2f];
-    components.saturationDeltaFactor = 1.8f;
+    components.tintColor = [UIColor colorWithWhite:.2f alpha:.2f];
+    components.saturationDeltaFactor = 3.f;
     components.maskImage = nil;
     return components;
 }
@@ -1199,7 +1199,7 @@ dispatch_source_t DispatchTimer(uint64_t interval, uint64_t leeway, dispatch_que
 + (MMBlurComponents *) darkEffect {
     MMBlurComponents *components = MB_AUTORELEASE([[MMBlurComponents alloc] init]);
     components.radius = 8;
-    components.tintColor = [UIColor colorWithRed:0.0f green:0.0 blue:0.0f alpha:.5f];
+    components.tintColor = [UIColor colorWithRed:0.0f green:0.0 blue:0.0f alpha:.8f];
     components.saturationDeltaFactor = 3.0f;
     components.maskImage = nil;
     return components;
